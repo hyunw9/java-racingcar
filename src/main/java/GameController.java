@@ -22,9 +22,9 @@ public class GameController {
         Cars cars = Cars.createCars(nameList);
 
         gameView.askTryCounts();
-        int times = getTryTimes();
+        int times = inputView.getTryTimes();
 
-        gameView.printRacingStart();
+        gameView.showRacingStart();
         for (int i = 0; i < times; i++) {
             setProgress();
             GameView.showProgress(carList);
