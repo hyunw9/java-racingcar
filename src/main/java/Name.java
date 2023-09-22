@@ -7,6 +7,10 @@ public class Name{
         this.name = name;
     }
 
+    public static Name createName(final String name){
+        validateNameLength(name);
+        return new Name(name);
+    }
 
     public static void validateNameLength(String name){
         if(name.length() > MAX_NAME_SIZE) {
