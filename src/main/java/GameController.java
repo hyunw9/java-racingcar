@@ -26,36 +26,25 @@ public class GameController {
 
         gameView.showRacingStart();
         for (int i = 0; i < times; i++) {
-            setProgress();
-            GameView.showProgress(carList);
+            setProgress(cars);
+            printCurrentProgress(cars);
             System.out.println();
         }
         List<String> winners = new ArrayList<>(getWinners());
         gameView.showWinner(winners);
     }
 
-    public String getCarNames() throws IOException {
-        return input.readLine();
-    }
-
-    public int getTryTimes() throws IOException {
-        String tryTimesStr = input.readLine();
-        return Integer.parseInt(tryTimesStr);
-    }
-
-    public void setProgress() {
-        carList.stream()
+    public void setProgress(Cars cars) {
+        cars.getCars()
+                .stream()
                 .filter(car -> dice.validateMove())
                 .forEach(Car::incrementCount);
     }
 
-    public List<String> getWinners() {
-        int maxCount = carList.stream().mapToInt(Car::getCount)
-                .max()
-                .orElse(0);
-        return carList.stream()
-                .filter(car -> car.getCount() == maxCount)
-                .map(Car::getName)
-                .collect(Collectors.toList());
+    private void printCurrentProgress(Cars cars){
+        for (Car car : cars.getCars()) {
+            String progress = car.getProgress();
+            gameView.showProgress(progress);
+        }
     }
 }
