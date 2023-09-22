@@ -3,13 +3,13 @@ import java.util.Set;
 
 public class Car {
 
-    private static Set<String> nameSet = new HashSet<>();
-    private String name;
+    static final int INITIAL_START_COUNT = 1;
+    private Name name;
     private int count;
 
     public Car(Name name) {
         this.name = name;
-        this.count = 1;
+        this.count = INITIAL_START_COUNT;
     }
 
     public static Car CreateCar(Name name){
