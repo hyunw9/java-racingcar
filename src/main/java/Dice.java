@@ -12,7 +12,6 @@ public class Dice {
 
     public boolean validateMove() {
         Dice check = new Dice();
-        return check.dice > 4;
         return check.dice > DELIMITER;
     }
 }

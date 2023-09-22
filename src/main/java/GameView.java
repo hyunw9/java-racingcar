@@ -20,7 +20,7 @@ public class GameView {
         System.out.println(progress);
     }
 
-    public static void showWinner(List<String> winner){
+    public void showWinner(List<String> winner) {
         String s = " ";
         System.out.println(winner.stream().collect(Collectors.joining(",")) + "가 최종 우승했습니다.");
     }

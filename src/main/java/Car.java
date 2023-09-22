@@ -27,4 +27,12 @@ public class Car {
     public int getCount() {
         return count;
     }
+
+    public String getProgress(){
+        return name + ": " + "-".repeat(count);
+    }
+
+    public boolean isWinner(int count){
+        return this.count == count;
+    }
 }

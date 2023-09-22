@@ -30,7 +30,7 @@ public class GameController {
             printCurrentProgress(cars);
             System.out.println();
         }
-        List<String> winners = new ArrayList<>(getWinners());
+        List<String> winners = new ArrayList<>(cars.getWinners(cars));
         gameView.showWinner(winners);
     }
 
