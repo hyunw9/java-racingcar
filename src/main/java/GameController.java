@@ -17,14 +17,9 @@ public class GameController {
     public void startGame() throws IOException {
 
         gameView.askCarNames();
-        String names = getCarNames();
-        nameList = Arrays.asList(names.split(","));
 
-        carList = new ArrayList<>();
-
-        for (String name : nameList) {
-            carList.add(new Car(name.trim()));
-        }
+        Names nameList = Names.createNames(inputView.getNames());
+        Cars cars = Cars.createCars(nameList);
 
         gameView.askTryCounts();
         int times = getTryTimes();
