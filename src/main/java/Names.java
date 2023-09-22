@@ -12,7 +12,7 @@ public class Names {
     public Names(String nameLine) {
         this.names = new ArrayList<>(Arrays.stream(nameLine.split(","))
                 .map(String::trim)
-                .map(Name::new)
+                .map(Name::createName)
                 .collect(Collectors.toList()));
         validateNameDuplication(names);
     }
