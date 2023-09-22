@@ -8,11 +8,11 @@ import java.util.stream.Collectors;
 
 public class GameController {
 
-    private final BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-    GameView gameView = new GameView();
-    private List<String> nameList;
-    private List<Car> carList;
-    private Dice dice = new Dice();
+    private final InputView inputView = new InputView();
+    private final GameView gameView = new GameView();
+    private final Dice dice = new Dice();
+    private Names names;
+    private Cars cars;
 
     public void startGame() throws IOException {
 
