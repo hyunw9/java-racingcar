@@ -7,9 +7,7 @@ public class Car {
     private String name;
     private int count;
 
-    public Car(String name) {
-        validateNameLength(name);
-        validateNameDuplication(name);
+    public Car(Name name) {
         this.name = name;
         this.count = 1;
     }
