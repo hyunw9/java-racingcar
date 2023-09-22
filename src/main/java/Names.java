@@ -17,6 +17,9 @@ public class Names {
         validateNameDuplication(names);
     }
 
+    public static Names createNames(String nameLine){
+        return new Names(nameLine);
+    }
 
     public void validateNameDuplication(List<Name> names) {
         Set<Name> nameSet = new HashSet<>(names);
