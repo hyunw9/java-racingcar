@@ -14,10 +14,8 @@ public class Car {
         this.count = 1;
     }
 
-    private void validateNameLength(String name) {
-        if (name.length() > 5) {
-            throw new IllegalArgumentException("자동차 길이가 혀용 길이를 초과힙니다.");
-        }
+    public static Car CreateCar(Name name){
+        return new Car(name);
     }
 
     private void validateNameDuplication(String name) {
