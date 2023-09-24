@@ -8,15 +8,17 @@ public class Cars {
 
     private final List<Car> cars;
 
-    public Cars(Names names){
-        this.cars = new ArrayList<>(names.getNames()
-                .stream()
-                .map(Car::CreateCar)
-                .collect(Collectors.toList()));
+    private Cars(List<Car> cars) {
+        this.cars = cars;
     }
 
-    public static Cars createCars(Names names){
-        return new Cars(names);
+    public static Cars createCars(String nameString) {
+        Names names = Names.createNames(nameString);
+        List<Car> cars = new ArrayList<>(names.getNames()
+                .stream()
+                .map(Car::createCar)
+                .collect(Collectors.toList()));
+        return new Cars(cars);
     }
 
     public List<Car> getCars() {
