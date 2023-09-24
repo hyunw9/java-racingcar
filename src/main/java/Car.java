@@ -3,8 +3,9 @@ import java.util.Set;
 
 public class Car {
 
-    static final int INITIAL_START_COUNT = 1;
-    private Name name;
+    private static final int INITIAL_START_COUNT = 1;
+
+    private final Name name;
     private int count;
 
     public Car(Name name) {
@@ -33,6 +34,7 @@ public class Car {
     }
 
     public boolean isWinner(int count){
+    public boolean isWinner(int count) {
         return this.count == count;
     }
 }
