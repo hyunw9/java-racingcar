@@ -2,9 +2,8 @@ import java.util.Random;
 
 public class Dice {
 
-    public static final int DELIMITER = 4;
-    Random random = new Random();
-    private int dice;
+    private static final int DELIMITER = 4;
+    private static final int BOUND = 10;
 
     public Dice() {
         this.dice = random.nextInt(10);
