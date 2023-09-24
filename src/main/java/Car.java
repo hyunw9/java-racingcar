@@ -18,7 +18,7 @@ public class Car {
     }
 
     public void incrementCount() {
-         this.count++;
+        this.count++;
     }
 
     public String getName() {
@@ -29,11 +29,6 @@ public class Car {
         return count;
     }
 
-    public String getProgress(){
-        return name + ": " + "-".repeat(count);
-    }
-
-    public boolean isWinner(int count){
     public boolean isWinner(int count) {
         return this.count == count;
     }
