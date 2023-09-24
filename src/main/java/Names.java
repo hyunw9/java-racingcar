@@ -7,16 +7,18 @@ public class Names {
 
     private final List<Name> names;
 
-    public Names(String nameLine) {
-        this.names = new ArrayList<>(Arrays.stream(nameLine.split(","))
+    private Names(List<Name> nameList) {
+        this.names = nameList;
+    }
+
+    public static Names createNames(String nameInput){
+        ArrayList<Name> nameList = new ArrayList<>(Arrays
+                .stream(nameInput.split(","))
                 .map(String::trim)
                 .map(Name::createName)
                 .collect(Collectors.toList()));
-        validateNameDuplication(names);
-    }
-
-    public static Names createNames(String nameLine){
-        return new Names(nameLine);
+        validateNameDuplication(nameList);
+        return new Names(nameList);
     }
 
     public void validateNameDuplication(List<Name> names) {
