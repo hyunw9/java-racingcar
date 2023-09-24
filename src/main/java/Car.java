@@ -8,13 +8,13 @@ public class Car {
     private final Name name;
     private int count;
 
-    public Car(Name name) {
+    private Car(Name name, int count) {
         this.name = name;
-        this.count = INITIAL_START_COUNT;
+        this.count = count;
     }
 
-    public static Car CreateCar(Name name){
-        return new Car(name);
+    public static Car createCar(Name name) {
+        return new Car(name,INITIAL_START_COUNT);
     }
 
     public void incrementCount() {
