@@ -21,9 +21,12 @@ public class Names {
         return new Names(nameList);
     }
 
-    public void validateNameDuplication(List<Name> names) {
-        Set<Name> nameSet = new HashSet<>(names);
-        if (nameSet.size() > names.size()) {
+    public static void validateNameDuplication(List<Name> names) {
+        long distinctCount = names.stream()
+                .map(Name::toString)
+                .distinct()
+                .count();
+        if (distinctCount < names.size()) {
             throw new IllegalArgumentException("이름이 중복됩니다.");
         }
     }
