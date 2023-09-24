@@ -34,6 +34,5 @@ public class Cars {
                 .filter(car -> car.isWinner(maxCount))
                 .map(Car::getName)
                 .collect(Collectors.toList());
-
     }
 }
