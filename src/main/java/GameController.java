@@ -1,17 +1,12 @@
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GameController {
 
     private final InputView inputView = new InputView();
     private final GameView gameView = new GameView();
-    private final Dice dice = new Dice();
-    private Names names;
+
     private Cars cars;
 
     public void startGame() throws IOException {
