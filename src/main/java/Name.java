@@ -1,13 +1,14 @@
 public class Name{
 
-    public static final int MAX_NAME_SIZE = 5;
+    private static final int MAX_NAME_SIZE = 5;
+
     private final String name;
 
-    public Name(final String name){
+    private Name(String name){
         this.name = name;
     }
 
-    public static Name createName(final String name){
+    public static Name createName(String name){
         validateNameLength(name);
         return new Name(name);
     }
@@ -17,9 +18,9 @@ public class Name{
             throw new IllegalArgumentException("이름 길이가 5를 초과합니다.");
         }
     }
-
     @Override
     public String toString(){
         return this.name;
     }
+
 }
